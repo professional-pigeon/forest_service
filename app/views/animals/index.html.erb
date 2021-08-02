@@ -1,0 +1,13 @@
+<h1>Animals</h1>
+
+<% if @animals.any? %>
+  <ul>
+    <% @animals.each do |animal| %>
+      <li><%= link_to animal.name, animal_path(animal)%></li>
+    <% end %>
+  </ul>
+  <% else %>
+    <p>Where are the animals?</p>
+<% end %>
+
+<p><%= link_to "Add an animal", new_animal_path %></p>
