@@ -10,6 +10,7 @@ class SightingsController < ApplicationController
   def create
     @animal = Animal.find(params[:animal_id])
     @sighting = @animal.sightings.new(sighting_params)
+    @sighting.update({:region_id => params[:region_id]})
     if @sighting.save
       redirect_to animal_path(@animal)
     else

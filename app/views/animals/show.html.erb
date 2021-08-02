@@ -21,3 +21,13 @@
 <p><%= link_to "Delete", animal_path(@animal), :data => {:confirm => "Are you out of your damn mind?", :method => "delete"} %></p>
 
 <p><%= link_to "Return to Animals", animals_path %></p>
+
+<form action="/animals/<%= @animal.id %>" method="get">
+  <div class="form-control">
+    <label id="date1">First date</label>
+    <input type="date" name ="date1" id="date1">
+    <label id="date2">First date</label>
+    <input type="date" name ="date2" id="date2">
+    <button type="submit" class="btn btn-primary">submit dates</button>
+  </div>
+</form>

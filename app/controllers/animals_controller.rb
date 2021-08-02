@@ -27,7 +27,11 @@ class AnimalsController < ApplicationController
 
   def show
     @animal = Animal.find(params[:id])
-    @sighting = @animal.sightings
+    if params[:date1] != nil
+      @sighting = Sighting.where(date_of_sighting: (params[:date1])..(params[:date2]))
+    else
+      @sighting = @animal.sightings
+    end
     render :show
   end
 

@@ -1,4 +1,4 @@
-<h1>Edit sighting:</h1>
+<h1>Edit Sighting:</h1>
 
 <%= form_for [@animal, @sighting] do |f| %>
   <%= f.label :date_of_sighting %>
@@ -12,7 +12,7 @@
 
 
 <select id ="volunteer" name="volunteer_id" class="form-select">
-  <% @regions.sort_by {|region| region.name.downcase}.each do |region| %>
+  <% @regions.sort_by {|region| region.name.downcase}.each do |region|
     <option name="<%= region.name %>" value="<%= region.id %>"><%= region.name %></option>
   <% end %>
-</select>
+</select> %>
