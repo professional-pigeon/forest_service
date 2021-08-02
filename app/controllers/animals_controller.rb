@@ -26,6 +26,7 @@ class AnimalsController < ApplicationController
 
   def show
     @animal = Animal.find(params[:id])
+    @sighting = @animal.sightings
     render :show
   end
 
@@ -47,7 +48,7 @@ class AnimalsController < ApplicationController
 
   private
   def animal_params
-    params.require(:animal).permit(:name, :genre)
+    params.require(:animal).permit(:name)
   end
 
 end

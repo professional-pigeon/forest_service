@@ -3,10 +3,10 @@
 <% if @animal.sightings.any? %>
   <h4>Here are the sightings for this animal:</h4>
 
-  <% @animal.sightings.each do |song| %>
+  <% @animal.sightings.each do |sighting| %>
     <ul>
       <li>
-        <%= link_to sighting.date, animal_sighting_path(@animal, sighting) %>
+        <%= link_to sighting.date_of_sighting, animal_sighting_path(@animal, sighting) %>
       </li>
     </ul>
   <% end %>

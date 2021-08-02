@@ -13,14 +13,11 @@ class SightingsController < ApplicationController
       redirect_to animal_path(@animal)
     else
       render :new
-  end
-
-  def index
-
+    end
   end
 
   def edit
-    @animal = Animalrtist.find(params[:animal_id])
+    @animal = Animal.find(params[:animal_id])
     @sighting = Sighting.find(params[:id])
     render :edit
   end
@@ -37,7 +34,7 @@ class SightingsController < ApplicationController
       redirect_to animal_path(@sighting.animal)
     else
       @animal = Animal.find(params[:animal_id])
-      render: edit 
+      render :edit
     end
   end
 
@@ -49,7 +46,7 @@ class SightingsController < ApplicationController
 
   private
   def sighting_params
-    params.require(:sightings).permit(:longitude, :latitude, :date)
+    params.require(:sighting).permit(:longitude, :latitude, :date_of_sighting)
   end
 
 end
