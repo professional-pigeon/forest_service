@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-image: url('https://4.bp.blogspot.com/-HdWgAq6xcO4/XJhaAyVoUII/AAAAAAAADc4/UdKawRp5g7EjLiePp1kghJ9Ds_CbqoOlACLcBGAs/s1600/ferngully-disneyscreencaps.com-7318.jpg');
+}
+.container {
+  color: rgb(240, 216, 216);
+  padding: 1em;
+ }
+    ul, ol{  background-color: rgba(248, 248, 255, 0.322)
+}

@@ -1,4 +1,8 @@
-<h1>Animals</h1>
+<h1>Explosive Growth Animal Tracker</h1>
+<br>
+<h2>The Explosive Growth Corporation is hoping to make some room for forests to grow and animals to frolic. EGC will achieve this noble goal by managing a nearby plot of elderly trees drowning in lush yet unsightly brush. <br><br>In order to make this widely-desired wilderness improvement, EGC needs help from you, the general public. If you happen to be in any of the regions, please report any common animal sightings. Any sightings of rare, endangered, or missing-link type animals should be reported directly to the company at nothingtoseehere@egc.com.
+
+<h4>Here are the animals: click to edit or add a sighting.</h4>
 
 <% if @animals.any? %>
   <ul>
@@ -7,7 +11,21 @@
     <% end %>
   </ul>
   <% else %>
-    <p>Where are the animals?</p>
+    <p>No animals sightings reported. Should we go ahead and cut all of these trees down or...?</p>
 <% end %>
 
 <p><%= link_to "Add an animal", new_animal_path %></p>
+
+<h4>Here are the regions: click to edit.</h4>
+
+<% if @regions.any? %>
+  <ul>
+    <% @regions.each do |region| %>
+      <li><%= link_to region.name, region_path(region)%></li>
+    <% end %>
+  </ul>
+  <% else %>
+    <p>No regions have been added to this project. Profits are being wasted!</p>
+<% end %>
+
+<p><%= link_to "Add a region", new_region_path %></p>

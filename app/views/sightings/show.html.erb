@@ -1,7 +1,9 @@
-<h1>Sighting: <%= @sighting.date_of_sighting %></h1>
+<h1>The Might Spirt of Rails Returns This Sighting: <%= @sighting.date_of_sighting %></h1>
 <h2>Animal: <%= @animal.name %></h2>
 <h3>Latitude coordinate: <%= @sighting.latitude %></h3> 
 <h3>Longitude coordinate: <%= @sighting.longitude %></h3>
+<h3>Longitude coordinate: <%= @sighting.longitude %></h3>
+<h3>id: <%= @sighting.region_id %></h3>
 
 <p><%= link_to "Edit sighting", edit_animal_sighting_path(@animal, @sighting) %></p>
 <p><%= link_to "Delete sighting", animal_sighting_path(@animal, @sighting), :data => {:confirm => "Are you sure?", :method => "delete"} %></p>

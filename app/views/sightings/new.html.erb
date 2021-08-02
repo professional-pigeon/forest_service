@@ -1,11 +1,18 @@
 <h1>Add a new sighting:</h1>
 
 <%= form_for [@animal, @sighting] do |f| %>
-  <%= f.label :date_of_sighting %>
   <%= f.date_field :date_of_sighting %>
-  <%= f.label :latitude %>
+  <%= f.label :date_of_sighting %>
+  <br>
   <%= f.number_field :latitude, step: :any %>
-  <%= f.label :longitude %>
+  <%= f.label :latitude %>
+  <br>
   <%= f.number_field :longitude, step: :any %>
+  <%= f.label :longitude %>
+  <select id ="region" name="region_id" class="form-select">
+  <% @regions.sort_by {|region| region.name.downcase}.each do |region| %>
+    <option name="<%= region.name %>" value="<%= region.id %>"><%= region.name %></option>
+  <% end %>
+  </select>
   <p><%= f.submit %></p>
 <% end %>

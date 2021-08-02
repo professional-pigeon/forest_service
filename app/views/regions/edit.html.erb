@@ -1,0 +1,9 @@
+<h1>Edit Region</h1>
+
+<%= form_for @region do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit  %>
+<% end %>
+
+<p><%= link_to "Delete", region_path(@region), :data => {:confirm => "Are you out of your damn mind?", :method => "delete"} %></p>

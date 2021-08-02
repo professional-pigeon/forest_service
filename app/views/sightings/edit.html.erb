@@ -9,3 +9,10 @@
   <%= f.number_field :longitude, step: :any %>
   <p><%= f.submit %></p>
 <% end %>
+
+
+<select id ="volunteer" name="volunteer_id" class="form-select">
+  <% @regions.sort_by {|region| region.name.downcase}.each do |region| %>
+    <option name="<%= region.name %>" value="<%= region.id %>"><%= region.name %></option>
+  <% end %>
+</select>

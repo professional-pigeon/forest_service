@@ -3,6 +3,7 @@ class SightingsController < ApplicationController
   def new
     @animal = Animal.find(params[:animal_id])
     @sighting = @animal.sightings.new
+    @regions = Region.all
     render :new
   end
 
@@ -41,12 +42,12 @@ class SightingsController < ApplicationController
   def destroy
     @sighting = Sighting.find(params[:id])
     @sighting.destroy
-    redirect to animal_path(@sighting.animal)
+    redirect_to animal_path(@sighting.animal)
   end
 
   private
   def sighting_params
-    params.require(:sighting).permit(:longitude, :latitude, :date_of_sighting)
+    params.require(:sighting).permit(:longitude, :latitude, :date_of_sighting, :region_id)
   end
 
 end
