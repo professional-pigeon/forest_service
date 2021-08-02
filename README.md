@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Classes:
+- Animals
+- Sightings
+- Region (many to many with) Animal (one to many) Sighting
+- Region: Joihn table ?
+n- Sighting: needs region? 
