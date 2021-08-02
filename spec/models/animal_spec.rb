@@ -1,5 +1,5 @@
 require 'rails_helper'
 
 describe Animal do
-  # thing
+  it { should have_many(:sightings) }
 end
